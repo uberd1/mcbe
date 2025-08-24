@@ -5,6 +5,7 @@ add_executable(mcbe
     src/main.cpp
     src/mce/platform/DeviceInfo.cpp
     src/mce/client/gui/screen/SettingsScreen.cpp
+    src/mce/common/sound/SoundManager.cpp
 )
 
 target_include_directories(mcbe PUBLIC
