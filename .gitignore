@@ -1,0 +1,19 @@
+# Visual Studio and CMake build files
+.vs/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+out/
+*.sln.docstates
+*.suo
+*.user
+*.vcxproj.user
+
+# Executables and libraries
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
