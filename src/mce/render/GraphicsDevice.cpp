@@ -1,12 +1,13 @@
 #include "mce/render/GraphicsDevice.h"
 #include <vector>
 #include <memory>
+#include <string> // Required for std::to_string
 
 // --- PLACEHOLDERS AND HELPERS ---
 
 struct GraphicsInfo {
     // PLACEHOLDER: Structure for raw hardware information
-    std::string mDeviceName; // We've added the device name field here
+    std::string mDeviceName;
     char unknown_data_1[8];
     unsigned int mVendorId;
     unsigned int mDeviceId;
@@ -21,7 +22,7 @@ struct GraphicsInfo {
 
 GraphicsInfo* GetGlobalGraphicsInfo() {
     static GraphicsInfo g_globalGraphicsInfo;
-    g_globalGraphicsInfo.mDeviceName = "NVIDIA GeForce RTX 7090 (Placeholder)"; // We now set the name here
+    g_globalGraphicsInfo.mDeviceName = "NVIDIA GeForce RTX 7090 (Placeholder)";
     g_globalGraphicsInfo.mVendorId = 4318;
     g_globalGraphicsInfo.mVideoMemory = 8ULL * 1024 * 1024 * 1024;
     return &g_globalGraphicsInfo;
@@ -72,7 +73,7 @@ GraphicsDevice::~GraphicsDevice()
 
 bool GraphicsDevice::Initialize(GraphicsInfo* graphicsInfo)
 {
-    this->mDeviceName = graphicsInfo->mDeviceName; // Now correctly takes the name from graphicsInfo
+    this->mDeviceName = graphicsInfo->mDeviceName;
     this->mVendorId = graphicsInfo->mVendorId;
     this->mDeviceId = graphicsInfo->mDeviceId;
     this->mDriverVersionMajor = graphicsInfo->mDriverVersionMajor;

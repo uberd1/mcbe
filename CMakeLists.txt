@@ -7,6 +7,11 @@ add_executable(mcbe
     src/mce/client/gui/screen/SettingsScreen.cpp
     src/mce/common/sound/SoundManager.cpp
     src/mce/render/GraphicsDevice.cpp
+    src/mce/render/ShaderManager.cpp
+    src/game/block/Block.cpp
+    src/game/block/StoneBlock.cpp
+    src/mce/client/ClientInstance.cpp  # <--- днаюбкемн
+    src/mce/core/TelemetryManager.cpp   # <--- днаюбкемн
 )
 
 target_include_directories(mcbe PUBLIC
