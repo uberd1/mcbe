@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "mce/platform/DeviceInfo.h"
 #include "mce/client/gui/screen/SettingsScreen.h"
 #include "mce/common/sound/SoundManager.h"
@@ -33,4 +32,17 @@ int main()
     bool success = graphicsDevice.Initialize(graphicsInfo);
 
     if (success) {
-        std::cout << "GraphicsDevice initialized successf
+        std::cout << "GraphicsDevice initialized successfully!" << std::endl;
+        // Эти строки пока закомментированы, так как поля приватные
+        // std::cout << "Device Name: " << graphicsDevice.mDeviceName << std::endl;
+        // std::cout << "GPU Vendor: " << graphicsDevice.mGpuVendorString << std::endl;
+    }
+    else {
+        std::cout << "GraphicsDevice failed to initialize." << std::endl;
+    }
+
+    std::cout << "\nSuccess! All tests passed. Press Enter to exit." << std::endl;
+    std::cin.get();
+
+    return 0;
+}

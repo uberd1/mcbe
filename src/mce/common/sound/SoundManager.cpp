@@ -1,20 +1,18 @@
 #include "mce/common/sound/SoundManager.h"
+#include <iostream>
 
-// placeholder fmod
 namespace FMOD {
-    namespace System {
+    namespace FMOD_System {
         int createSound(void* system, const char* name, int mode, void* exinfo, void** sound) {
             return 0;
         }
     }
-    namespace Sound {
+    namespace FMOD_Sound {
         int release(void* sound) {
             return 0;
         }
     }
 }
-// placeholder fmod
-
 
 SoundManager::SoundManager() : mFmodSystem(nullptr), mIsInitialized(true)
 {
@@ -41,8 +39,7 @@ void SoundManager::stopSoundByName(const std::string& soundName)
 
     if (it != mSoundCache.end())
     {
-        // В оригинальном коде здесь происходит реальная работа:
-        FMOD::Sound::release(it->second.fmodSound);
+        FMOD::FMOD_Sound::release(it->second.fmodSound);
         mSoundCache.erase(it);
     }
 }

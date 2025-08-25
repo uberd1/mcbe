@@ -2,11 +2,8 @@
 #include <string>
 #include <memory>
 
-// --- PLACEHOLDERS ---
-// --- PLACEHOLDERS ---
 struct GraphicsInfo;
 class Renderer;
-// --- END PLACEHOLDERS ---
 
 class GraphicsDevice
 {
@@ -25,10 +22,10 @@ private:
     unsigned long long mSomeCapabilityFlags1;
     unsigned long long mVideoMemory;
     unsigned long long mSystemMemory;
-    std::string mCpuBrandString;
+    std::string mGpuVendorString;
     std::string mRenderBackendName;
 
-    char unknown_data[28]; // Placeholder for unanalyzed fields
+    char unknown_data[28];
 
     int mMaxTextureSize;
     int mMinTextureSize;

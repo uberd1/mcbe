@@ -4,9 +4,9 @@
 #include <unordered_map>
 
 namespace FMOD {
-    class System;
-    class Sound;
-    class Channel;
+    class FMOD_System;
+    class FMOD_Sound;
+    class FMOD_Channel;
 }
 
 class SoundManager
@@ -14,8 +14,8 @@ class SoundManager
 private:
     struct SoundHandle {
         std::string name;
-        FMOD::Sound* fmodSound;
-        FMOD::Channel* fmodChannel;
+        FMOD::FMOD_Sound* fmodSound;
+        FMOD::FMOD_Channel* fmodChannel;
     };
 
 public:
@@ -34,7 +34,7 @@ public:
 
 private:
     bool mIsInitialized;
-    FMOD::System* mFmodSystem;
+    FMOD::FMOD_System* mFmodSystem;
     std::unordered_map<std::string, SoundHandle> mSoundCache;
     std::mutex mCacheMutex;
 };
