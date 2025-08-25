@@ -5,9 +5,10 @@
 #include "mce/common/sound/SoundManager.h"
 #include "mce/render/GraphicsDevice.h"
 #include "mce/render/ShaderManager.h"
+#include "game/block/Block.h"
 #include "game/block/StoneBlock.h"
-#include "mce/client/ClientInstance.h" // <--- ДОБАВЛЕНО
-#include "mce/core/TelemetryManager.h"  // <--- ДОБАВЛЕНО
+#include "mce/client/ClientInstance.h"
+#include "mce/core/TelemetryManager.h"
 
 struct GraphicsInfo;
 GraphicsInfo* GetGlobalGraphicsInfo();
@@ -35,8 +36,6 @@ int main()
     StoneBlock myStone("stone", 1);
     std::cout << "-> StoneBlock created." << std::endl;
 
-    // Мы не можем создать ClientInstance или TelemetryManager напрямую,
-    // но мы можем проверить, что наши заглушки работают.
     ClientInstance* ci = GetClientInstance();
     std::cout << "-> GetClientInstance() called." << std::endl;
 
@@ -44,6 +43,16 @@ int main()
     telemetryManager.SendHardwareInfoEvent();
     std::cout << "-> TelemetryManager methods called." << std::endl;
 
+    std::cout << "\n--- Running Initializers ---" << std::endl;
+    GraphicsInfo* graphicsInfo = GetGlobalGraphicsInfo();
+    std::cout << "-> Successfully got GraphicsInfo object." << std::endl;
+    bool success = graphicsDevice.Initialize(graphicsInfo);
+    if (success) {
+        std::cout << "-> GraphicsDevice initialized successfully!" << std::endl;
+    }
+    else {
+        std::cout << "-> GraphicsDevice failed to initialize." << std::endl;
+    }
 
     std::cout << "\nSuccess! All classes are included and compiling. Press Enter to exit." << std::endl;
     std::cin.get();
