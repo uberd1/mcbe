@@ -1,16 +1,6 @@
-#include "mce/client/gui/screen/UIScreenFactory.h" // Путь к .h файлу изменился
+#include "mce/client/gui/screen/UIScreenFactory.h" // Этот файл уже подключает Json.h
 #include "mce/client/ClientInstance.h"
 
-// --- PLACEHOLDERS AND HELPERS ---
-namespace Json {
-    class Value {
-    public:
-        Value& operator[](const char* key) { return *this; }
-        void operator=(bool value) {}
-        void operator=(const std::string& value) {}
-    };
-}
-// --- END PLACEHOLDERS AND HELPERS ---
 
 
 UIScreenFactory::UIScreenFactory(ClientInstance* client) : mClientInstance(client)
