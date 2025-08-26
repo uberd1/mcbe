@@ -10,6 +10,7 @@
 #include "mce/platform/DeviceInfo.h"
 #include "mce/render/GraphicsDevice.h"
 #include "mce/render/ShaderManager.h"
+#include "mce/json/Json.h"
 
 // --- «ј√Ћ”Ў » / ќЅЏя¬Ћ≈Ќ»я ---
 // Ёти объ€влени€ нужны, чтобы main.cpp знал о типах и функци€х,

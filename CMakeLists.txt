@@ -13,7 +13,7 @@ add_executable(mcbe
     src/mce/platform/DeviceInfo.cpp
     src/mce/render/GraphicsDevice.cpp
     src/mce/render/ShaderManager.cpp
-)
+ "include/mce/json/Json.h")
 
 target_include_directories(mcbe PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/include"

@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
+#include "mce/json/Json.h" // <--- ÈÇÌÅÍÅÍÈÅ: Ïîäêëþ÷àåì íàø íîâûé ôàéë
 
 // --- PLACEHOLDERS ---
 class ClientInstance;
 class Screen;
-namespace Json { class Value; }
+// namespace Json { class Value; } // <--- ÈÇÌÅÍÅÍÈÅ: Óáèðàåì ýòó ñòðî÷êó
 // --- END PLACEHOLDERS ---
 
 class UIScreenFactory
