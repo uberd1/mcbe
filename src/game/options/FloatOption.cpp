@@ -1,0 +1,2 @@
+#include "game/options/FloatOption.h"
+FloatOption::FloatOption(const std::string& d, const std::string& c, float def, float min, float max) : Option(d, c), mValue(def), mDefaultValue(def), mMinValue(min), mMaxValue(max) {}

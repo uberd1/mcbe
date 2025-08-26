@@ -1,0 +1,2 @@
+#include "game/options/IntOption.h"
+IntOption::IntOption(const std::string& d, const std::string& c, int def, int min, int max) : Option(d, c), mValue(def), mDefaultValue(def), mMinValue(min), mMaxValue(max) {}
