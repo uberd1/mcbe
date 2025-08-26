@@ -3,15 +3,16 @@ project(mcbe VERSION 1.0 LANGUAGES CXX)
 
 add_executable(mcbe
     src/main.cpp
-    src/mce/platform/DeviceInfo.cpp
-    src/mce/client/gui/screen/SettingsScreen.cpp
-    src/mce/common/sound/SoundManager.cpp
-    src/mce/render/GraphicsDevice.cpp
-    src/mce/render/ShaderManager.cpp
     src/game/block/Block.cpp
     src/game/block/StoneBlock.cpp
-    src/mce/client/ClientInstance.cpp  # <--- днаюбкемн
-    src/mce/core/TelemetryManager.cpp   # <--- днаюбкемн
+    src/mce/client/ClientInstance.cpp
+    src/mce/client/gui/screen/SettingsScreen.cpp
+    src/mce/client/gui/screen/UIScreenFactory.cpp
+    src/mce/common/sound/SoundManager.cpp
+    src/mce/core/TelemetryManager.cpp
+    src/mce/platform/DeviceInfo.cpp
+    src/mce/render/GraphicsDevice.cpp
+    src/mce/render/ShaderManager.cpp
 )
 
 target_include_directories(mcbe PUBLIC
